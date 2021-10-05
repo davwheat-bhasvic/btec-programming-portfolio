@@ -1,0 +1,10 @@
+{
+  "name": "@ocr-challenges/16",
+  "version": "0.1.0",
+  "main": "index.js",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "dev": "../node_modules/.bin/nodemon --exec ../node_modules/.bin/ts-node index.ts"
+  }
+}
