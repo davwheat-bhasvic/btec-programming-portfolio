@@ -7,11 +7,22 @@ class Hand:
         pass
 
     def addCard(self, card: Card) -> None:
-        self.cards.append(card)
+        self.addCards([card])
         pass
 
-    def getAllValues() -> list[int]:
+    def addCards(self, cards: list[Card]) -> None:
+        self.cards.extend(cards)
         pass
+
+    def getNonBustValues(self) -> list[int]:
+        values = self.getAllValues()
+
+        return [value for value in values if value <= 21]
+
+    def getAllValues(self) -> list[int]:
+        values = self._calculateValue([0], self.cards)
+
+        return values
 
     def _calculateValue(self, values: list[int], cards: list[Card]) -> list[int]:
         if len(cards) == 0:
